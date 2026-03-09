@@ -28,6 +28,7 @@ async function authenticatedFetch(
     headers: {
       Authorization: Bearer ,
       'Content-Type': 'application/json',
+      'User-Agent': 'lucid-mcp/1.0.0',
     },
   })
 
