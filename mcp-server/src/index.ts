@@ -33,7 +33,7 @@ async function authenticatedFetch(
   })
 
   if (!res.ok) {
-    const body = await res.text().catch(() => '')
+    const body = await res.text().catch(() => 'unknown error')
     throw new Error(Lucid API error : )
   }
 
