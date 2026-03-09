@@ -9,6 +9,9 @@ triggers:
   - npm install
   - pip install
   - version
+  - upgrade
+tools:
+  - lucid_check_package
 ---
 
 # Latest Package Versions
