@@ -36,6 +36,21 @@ server.tool(
   }
 )
 
+
+server.tool(
+  'lucid_check_package',
+  'Check the latest version, changelog, and compatibility of any package or library. Ensures you are using the most current and stable version.',
+  {
+    name: z.string().describe('Package name (e.g. react, express, lodash)'),
+    registry: z.string().optional().describe('Package registry: npm, pypi, cargo, etc.'),
+  },
+  async ({ name, registry }) => {
+    const params: Record<string, string> = { q: name, type: 'package' }
+    if (registry) params.registry = registry
+    const data = await authenticatedFetch('/search', params)
+    return { content: [{ type: 'text' as const, text: JSON.stringify(data, null, 2) }] }
+  }
+)
 async function main() {
   const transport = new StdioServerTransport()
   await server.connect(transport)
