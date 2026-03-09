@@ -14,3 +14,12 @@ lucid gives ai agents access to real-time, verified information instead of relyi
 /plugin marketplace add get-Lucid/Lucid
 /plugin marketplace install lucid@get-Lucid/Lucid
 ```
+### openclaw skills
+
+```
+/skills install @lucid/real-time-docs
+/skills install @lucid/latest-packages
+/skills install @lucid/fact-grounding
+/skills install @lucid/live-api-reference
+/skills install @lucid/codebase-freshness
+```
