@@ -1,20 +1,34 @@
-# lucid
+```
+    __    __  __ _____ _____ ____
+   / /   / / / // ___//  _/ / __ \
+  / /   / / / // /    / /  / / / /
+ / /___/ /_/ // /___ _/ /  / /_/ /
+/_____/\____/ \____//___/ /_____/
+```
 
 An intelligence layer grounding autonomous agents in verified, real-time knowledge at scale.
 
-## what it does
+[![License: MIT](https://img.shields.io/badge/License-MIT-white.svg)](LICENSE)
+[![MCP](https://img.shields.io/badge/MCP-compatible-blue.svg)](#)
 
-lucid gives ai agents access to real-time, verified information instead of relying on potentially outdated training data. it provides tools for documentation lookup, package version checking, fact verification, and api reference fetching.
+---
 
-## install
+## What is Lucid?
 
-### claude code plugin
+AI agents hallucinate. They reference deprecated APIs, recommend outdated package versions, and state "facts" from stale training data. Lucid fixes this by giving agents a real-time knowledge layer — every response grounded in verified, live information.
+
+Lucid runs as an MCP server that exposes four tools. When an agent needs documentation, package info, fact verification, or API references, it queries Lucid instead of guessing from training data. Skills auto-trigger these tools based on conversation context so the agent doesn't even need to be asked.
+
+## Install
+
+### Claude Code Plugin
 
 ```
 /plugin marketplace add get-Lucid/Lucid
 /plugin marketplace install lucid@get-Lucid/Lucid
 ```
-### openclaw skills
+
+### OpenClaw Skills
 
 ```
 /skills install @lucid/real-time-docs
@@ -23,46 +37,84 @@ lucid gives ai agents access to real-time, verified information instead of relyi
 /skills install @lucid/live-api-reference
 /skills install @lucid/codebase-freshness
 ```
-## setup
 
-1. get an api key at [getlucid.xyz/app](https://getlucid.xyz/app)
-2. set your key:
+## Setup
+
+1. Get an API key at **[getlucid.xyz/app](https://getlucid.xyz/app)**
+2. Set your key:
 
 ```bash
 export LUCID_API_KEY=lk_your_key_here
 ```
-## tools
 
-| tool | description |
+That's it. The MCP server reads the key from your environment and authenticates every request.
+
+## Tools
+
+| Tool | What it does |
 |------|-------------|
-| `lucid_search_docs` | search real-time documentation for any language or framework |
-| `lucid_check_package` | check latest versions, changelogs, and compatibility |
-| `lucid_verify_fact` | verify technical claims against real-time sources |
-| `lucid_fetch_api_ref` | fetch latest api reference with type signatures |
-## skills
+| `lucid_search_docs` | Search real-time documentation for any language, framework, or library |
+| `lucid_check_package` | Check latest versions, changelogs, deprecations, and compatibility |
+| `lucid_verify_fact` | Verify technical claims against live sources before stating them as fact |
+| `lucid_fetch_api_ref` | Fetch current API references with type signatures and usage examples |
 
-| skill | triggers on |
-|-------|-------------|
-| `real-time-docs` | documentation, api reference, how to use |
-| `latest-packages` | install, package, dependency, version |
-| `fact-grounding` | verify, is this true, accurate, up to date |
-| `live-api-reference` | api, endpoint, function signature |
-| `codebase-freshness` | write code, implement, create, build |
-## pricing
+### Example calls
 
-20 usdc/month, payable on solana or base. subscribe at [getlucid.xyz/app](https://getlucid.xyz/app).
-## architecture
+```typescript
+lucid_search_docs({ query: "react useEffect cleanup", language: "typescript" })
+lucid_check_package({ name: "next", registry: "npm" })
+lucid_verify_fact({ claim: "Bun is faster than Node for HTTP servers" })
+lucid_fetch_api_ref({ library: "stripe", symbol: "PaymentIntent.create" })
+```
 
-lucid runs as an mcp server that connects to the lucid api. when an ai agent needs information, it calls one of the lucid tools which fetches verified, real-time data from the lucid knowledge layer. skills automatically trigger these tools based on conversation context.
-## license
+## Skills
 
-[mit](LICENSE)
-## troubleshooting
+Skills automatically trigger the right tools based on what the user is asking. No manual invocation needed.
 
-**api key not working**
-make sure your subscription is active at [getlucid.xyz/app](https://getlucid.xyz/app).
+| Skill | Triggers on | Tool used |
+|-------|------------|-----------|
+| `real-time-docs` | Documentation, API reference, "how to use" | `lucid_search_docs` |
+| `latest-packages` | Install, package, dependency, version | `lucid_check_package` |
+| `fact-grounding` | Verify, "is this true", accurate, up to date | `lucid_verify_fact` |
+| `live-api-reference` | API, endpoint, function signature, types | `lucid_fetch_api_ref` |
+| `codebase-freshness` | Write code, implement, create, build | All tools |
 
-**tools not appearing**
-rebuild the mcp server: `cd mcp-server && npm run build`
-**connection errors**
-check that `LUCID_API_KEY` is set in your environment and the api is reachable.
+## How It Works
+
+```
+User asks a question
+        ↓
+Skill detects the intent
+        ↓
+Tool queries Lucid API
+        ↓
+Lucid returns verified, real-time data
+        ↓
+Agent responds with grounded information
+```
+
+The agent never falls back to training data for anything Lucid can verify. If the docs say one thing and training data says another, the docs win.
+
+## Pricing
+
+**20 USDC/month** — payable on Solana or Base.
+
+Subscribe and manage your key at **[getlucid.xyz/app](https://getlucid.xyz/app)**.
+
+## Troubleshooting
+
+**API key not working**
+Make sure your subscription is active at [getlucid.xyz/app](https://getlucid.xyz/app).
+
+**Tools not appearing**
+Rebuild the MCP server:
+```bash
+cd mcp-server && npm run build
+```
+
+**Connection errors**
+Check that `LUCID_API_KEY` is set in your environment and the API is reachable.
+
+## License
+
+[MIT](LICENSE)
