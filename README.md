@@ -23,3 +23,11 @@ lucid gives ai agents access to real-time, verified information instead of relyi
 /skills install @lucid/live-api-reference
 /skills install @lucid/codebase-freshness
 ```
+## setup
+
+1. get an api key at [getlucid.xyz/app](https://getlucid.xyz/app)
+2. set your key:
+
+```bash
+export LUCID_API_KEY=lk_your_key_here
+```
