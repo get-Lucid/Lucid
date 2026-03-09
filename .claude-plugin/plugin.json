@@ -16,5 +16,6 @@
       }
     }
   ],
-  "hooks": "hooks.json"
+  "hooks": "hooks.json",
+  "skills_dir": "skills"
 }
