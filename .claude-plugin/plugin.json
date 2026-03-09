@@ -1,0 +1,12 @@
+{
+  "name": "lucid",
+  "version": "0.1.0",
+  "description": "Real-time knowledge grounding for AI agents",
+  "mcp_servers": [
+    {
+      "name": "lucid",
+      "command": "node",
+      "args": ["mcp-server/dist/index.js"]
+    }
+  ]
+}
