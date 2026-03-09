@@ -120,4 +120,7 @@ async function main() {
   await server.connect(transport)
 }
 
-main().catch(console.error)
+main().catch((err) => {
+  console.error('Failed to start Lucid MCP server:', err)
+  process.exit(1)
+})
