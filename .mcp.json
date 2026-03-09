@@ -4,7 +4,8 @@
       "command": "node",
       "args": ["mcp-server/dist/index.js"],
       "env": {
-        "LUCID_API_KEY": ""
+        "LUCID_API_KEY": "",
+        "LUCID_API_URL": "https://getlucid.xyz/api/v1"
       }
     }
   }
