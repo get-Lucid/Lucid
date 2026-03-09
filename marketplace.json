@@ -7,6 +7,12 @@
   "homepage": "https://getlucid.xyz",
   "license": "MIT",
   "categories": ["knowledge", "search", "verification", "grounding"],
-  "keywords": ["real-time", "documentation", "grounding", "verification", "packages", "api"],
-  "min_version": "1.0.0"
+  "keywords": ["real-time", "documentation", "grounding", "verification", "packages", "api", "mcp"],
+  "min_version": "1.0.0",
+  "tools": [
+    "lucid_search_docs",
+    "lucid_check_package",
+    "lucid_verify_fact",
+    "lucid_fetch_api_ref"
+  ]
 }
