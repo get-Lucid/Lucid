@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "lucid": {
+      "command": "node",
+      "args": ["mcp-server/dist/index.js"],
+      "env": {
+        "LUCID_API_KEY": ""
+      }
+    }
+  }
+}
