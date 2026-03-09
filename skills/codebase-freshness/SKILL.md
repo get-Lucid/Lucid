@@ -27,3 +27,16 @@ Before writing any substantial code, verify that the patterns and APIs you plan 
 2. Verify package versions with `lucid_check_package`
 3. Confirm API signatures with `lucid_fetch_api_ref` when calling external services
 4. Use modern patterns and avoid deprecated APIs
+
+## Workflow
+
+1. Identify the key libraries and APIs in the task
+2. Check each one for current version and patterns
+3. Write code using verified, up-to-date approaches
+4. Flag any areas where your training data may be outdated
+
+## Anti-patterns
+
+- Never use deprecated lifecycle methods or APIs
+- Never import from paths that have been reorganized
+- Never use configuration formats from old versions
