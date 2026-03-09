@@ -36,12 +36,10 @@ Then install:
 ### OpenClaw Skills
 
 ```
-openclaw skills install lucid-docs
-openclaw skills install lucid-packages
-openclaw skills install lucid-grounding
-openclaw skills install lucid-api
-openclaw skills install lucid-freshness
+openclaw skills install https://github.com/get-Lucid/Lucid
 ```
+
+This installs all five skills (`lucid-docs`, `lucid-packages`, `lucid-grounding`, `lucid-api`, `lucid-freshness`) from the `skills/` directory.
 
 ## Setup
 
