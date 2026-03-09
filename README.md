@@ -51,7 +51,7 @@ export LUCID_API_KEY=lk_your_key_here
 ## pricing
 
 20 usdc/month, payable on solana or base. subscribe at [getlucid.xyz/app](https://getlucid.xyz/app).
-## how it works
+## architecture
 
 lucid runs as an mcp server that connects to the lucid api. when an ai agent needs information, it calls one of the lucid tools which fetches verified, real-time data from the lucid knowledge layer. skills automatically trigger these tools based on conversation context.
 ## license
