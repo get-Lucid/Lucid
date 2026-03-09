@@ -6,3 +6,5 @@ dist/
 *.tgz
 coverage/
 .turbo/
+.next/
+*.local
