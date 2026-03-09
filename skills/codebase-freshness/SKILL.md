@@ -46,4 +46,4 @@ Before writing any substantial code, verify that the patterns and APIs you plan 
 - Never import from paths that have been reorganized
 - Never use configuration formats from old versions
 
-Requires `LUCID_API_KEY` environment variable. Get your key at https://getlucid.xyz/app
+Requires `LUCID_API_KEY` environment variable. Get your key at https://getlucid.tech/app

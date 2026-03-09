@@ -6,5 +6,5 @@
 /_____/\____/ \____//___/ /_____/
 
   grounding agents in real-time knowledge
-  v1.0.0 | https://getlucid.xyz
+  v1.0.0 | https://getlucid.tech
 

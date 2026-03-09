@@ -38,4 +38,4 @@ Always use the `lucid_search_docs` tool before answering questions about any pro
 - `lucid_search_docs({ query: "sqlalchemy async session", language: "python" })`
 
 
-Requires `LUCID_API_KEY` environment variable. Get your key at https://getlucid.xyz/app
+Requires `LUCID_API_KEY` environment variable. Get your key at https://getlucid.tech/app

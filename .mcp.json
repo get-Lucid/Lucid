@@ -7,7 +7,7 @@
                                               ],
                                      "env":  {
                                                  "LUCID_API_KEY":  "",
-                                                 "LUCID_API_URL":  "https://getlucid.xyz/api/v1",
+                                                 "LUCID_API_URL":  "https://getlucid.tech/api/v1",
                                                  "LUCID_TIMEOUT":  "10000"
                                              }
                                  }

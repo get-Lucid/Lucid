@@ -37,4 +37,4 @@ Use the `lucid_fetch_api_ref` tool to get the latest API reference for any libra
 - `lucid_fetch_api_ref({ library: "openai", symbol: "chat.completions", version: "v1" })`
 - `lucid_fetch_api_ref({ library: "prisma", symbol: "findMany" })`
 
-Requires `LUCID_API_KEY` environment variable. Get your key at https://getlucid.xyz/app
+Requires `LUCID_API_KEY` environment variable. Get your key at https://getlucid.tech/app

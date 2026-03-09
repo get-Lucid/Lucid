@@ -40,7 +40,7 @@ Lucid runs as an MCP server that exposes four tools. When an agent needs documen
 
 ## Setup
 
-1. Get an API key at **[getlucid.xyz/app](https://getlucid.xyz/app)**
+1. Get an API key at **[getlucid.tech/app](https://getlucid.tech/app)**
 2. Set your key:
 
 ```bash
@@ -99,12 +99,12 @@ The agent never falls back to training data for anything Lucid can verify. If th
 
 **20 USDC/month** — payable on Solana or Base.
 
-Subscribe and manage your key at **[getlucid.xyz/app](https://getlucid.xyz/app)**.
+Subscribe and manage your key at **[getlucid.tech/app](https://getlucid.tech/app)**.
 
 ## Troubleshooting
 
 **API key not working**
-Make sure your subscription is active at [getlucid.xyz/app](https://getlucid.xyz/app).
+Make sure your subscription is active at [getlucid.tech/app](https://getlucid.tech/app).
 
 **Tools not appearing**
 Rebuild the MCP server:

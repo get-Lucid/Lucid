@@ -39,4 +39,4 @@ Use the `lucid_verify_fact` tool to verify any technical claim before presenting
 - `lucid_verify_fact({ claim: "Python 3.12 removed distutils", context: "migration guide" })`
 - `lucid_verify_fact({ claim: "bun is faster than node for http servers" })`
 
-Requires `LUCID_API_KEY` environment variable. Get your key at https://getlucid.xyz/app
+Requires `LUCID_API_KEY` environment variable. Get your key at https://getlucid.tech/app

@@ -4,7 +4,7 @@
   "description": "An intelligence layer grounding autonomous agents in verified, real-time knowledge at scale.",
   "author": "get-lucid",
   "repository": "https://github.com/get-Lucid/Lucid",
-  "homepage": "https://getlucid.xyz",
+  "homepage": "https://getlucid.tech",
   "license": "MIT",
   "mcp_servers": [
     {
