@@ -57,3 +57,10 @@ lucid runs as an mcp server that connects to the lucid api. when an ai agent nee
 ## license
 
 mit
+## troubleshooting
+
+**api key not working**
+make sure your subscription is active at [getlucid.xyz/app](https://getlucid.xyz/app).
+
+**tools not appearing**
+rebuild the mcp server: `cd mcp-server && npm run build`
