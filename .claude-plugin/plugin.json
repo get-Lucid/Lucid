@@ -2,20 +2,14 @@
   "name": "lucid",
   "version": "1.0.0",
   "description": "An intelligence layer grounding autonomous agents in verified, real-time knowledge at scale.",
-  "author": "get-lucid",
+  "author": {
+    "name": "get-Lucid",
+    "url": "https://github.com/get-Lucid"
+  },
   "repository": "https://github.com/get-Lucid/Lucid",
   "homepage": "https://getlucid.tech",
   "license": "MIT",
-  "mcp_servers": [
-    {
-      "name": "lucid",
-      "command": "node",
-      "args": ["mcp-server/dist/index.js"],
-      "env": {
-        "LUCID_API_KEY": ""
-      }
-    }
-  ],
-  "hooks": "hooks.json",
-  "skills_dir": "skills"
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json"
 }
