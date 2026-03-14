@@ -22,7 +22,7 @@ async function authenticatedFetch(
     } as unknown
   }
 
-  const url = new URL(endpoint, API_URL)
+  const url = new URL(API_URL + endpoint)
   Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v))
 
   const res = await fetch(url.toString(), {

@@ -20999,7 +20999,7 @@ async function authenticatedFetch(endpoint, params = {}) {
       message: "No API key detected. Ask the user to paste their Lucid API key in the chat, then call the MCP tool lucid_set_api_key with their key. They can get a key at https://getlucid.tech/app"
     };
   }
-  const url = new URL(endpoint, API_URL);
+  const url = new URL(API_URL + endpoint);
   Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
   const res = await fetch(url.toString(), {
     headers: {
