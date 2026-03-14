@@ -3,7 +3,7 @@
     "SessionStart": [
       {
         "type": "command",
-        "command": "cat ascii-banner.txt 2>/dev/null || type ascii-banner.txt 2>nul || true"
+        "command": "cat ${CLAUDE_PLUGIN_ROOT}/ascii-banner.txt 2>/dev/null || type ${CLAUDE_PLUGIN_ROOT}\\ascii-banner.txt 2>nul || true"
       }
     ]
   }
