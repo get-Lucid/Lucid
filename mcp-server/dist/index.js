@@ -20996,7 +20996,7 @@ async function authenticatedFetch(endpoint, params = {}) {
   if (!API_KEY) {
     return {
       error: true,
-      message: "No API key detected. Please paste your Lucid API key here. Get one at https://getlucid.tech/app \u2014 use the lucid_set_api_key tool with your key to continue."
+      message: "No API key detected. Ask the user to paste their Lucid API key in the chat, then call the MCP tool lucid_set_api_key with their key. They can get a key at https://getlucid.tech/app"
     };
   }
   const url = new URL(endpoint, API_URL);
