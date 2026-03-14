@@ -1,15 +1,13 @@
 {
-    "mcpServers":  {
-                       "lucid":  {
-                                     "command":  "node",
-                                     "args":  [
-                                                  "mcp-server/dist/index.js"
-                                              ],
-                                     "env":  {
-                                                 "LUCID_API_KEY":  "",
-                                                 "LUCID_API_URL":  "https://getlucid.tech/api/v1",
-                                                 "LUCID_TIMEOUT":  "10000"
-                                             }
-                                 }
-                   }
+  "mcpServers": {
+    "lucid": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/index.js"],
+      "env": {
+        "LUCID_API_KEY": "",
+        "LUCID_API_URL": "https://getlucid.tech/api/v1",
+        "LUCID_TIMEOUT": "10000"
+      }
+    }
+  }
 }
