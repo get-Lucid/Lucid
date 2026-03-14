@@ -3,7 +3,7 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
 
 const API_URL = (process.env.LUCID_API_URL || 'https://getlucid.tech/api/v1').replace(/\/$/, '')
-const API_KEY = process.env.LUCID_API_KEY || ''
+let API_KEY = process.env.LUCID_API_KEY || ''
 
 const server = new McpServer({
   name: 'lucid',
@@ -16,9 +16,10 @@ async function authenticatedFetch(
   params: Record<string, string> = {}
 ): Promise<unknown> {
   if (!API_KEY) {
-    throw new Error(
-      'LUCID_API_KEY not set. Get your key at https://getlucid.tech/app'
-    )
+    return {
+      error: true,
+      message: 'No API key detected. Please paste your Lucid API key here. Get one at https://getlucid.tech/app — use the lucid_set_api_key tool with your key to continue.'
+    } as unknown
   }
 
   const url = new URL(endpoint, API_URL)
@@ -26,7 +27,7 @@ async function authenticatedFetch(
 
   const res = await fetch(url.toString(), {
     headers: {
-      Authorization: Bearer ,
+      Authorization: `Bearer ${API_KEY}`,
       'Content-Type': 'application/json',
       'User-Agent': 'lucid-mcp/1.0.0',
     },
@@ -34,7 +35,7 @@ async function authenticatedFetch(
 
   if (!res.ok) {
     const body = await res.text().catch(() => 'unknown error')
-    throw new Error(Lucid API error : )
+    throw new Error(`Lucid API error ${res.status}: ${body}`)
   }
 
   return res.json()
@@ -45,6 +46,12 @@ function textResult(data: unknown) {
     content: [{ type: 'text' as const, text: JSON.stringify(data, null, 2) }],
   }
 }
+
+// @ts-ignore
+server.tool('lucid_set_api_key', { key: z.string() }, async ({ key }: { key: string }) => {
+  API_KEY = key.trim()
+  return { content: [{ type: 'text' as const, text: 'API key set. Lucid is ready.' }] }
+})
 
 server.tool(
   'lucid_search_docs',
